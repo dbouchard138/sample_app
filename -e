@@ -1,4 +1,4 @@
-Exception encountered: #<LoadError: cannot load such file -- /Users/Danab/rails_project/sample_app/signup with invalid information>
+Exception encountered: #<LoadError: cannot load such file -- /Users/Danab/rails_project/sample_app/with invalid information>
 backtrace:
 /Users/Danab/.rvm/gems/ruby-1.9.3-p385@global/gems/activesupport-3.2.12/lib/active_support/dependencies.rb:245:in `load'
 /Users/Danab/.rvm/gems/ruby-1.9.3-p385@global/gems/activesupport-3.2.12/lib/active_support/dependencies.rb:245:in `block in load'
