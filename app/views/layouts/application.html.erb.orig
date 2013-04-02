@@ -10,9 +10,15 @@
 <body>
 	<%= render 'layouts/header' %> 
 	<div class="container">
+<<<<<<< HEAD
+		<% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+        <% end %>
+=======
 	<% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "alert alert-#{key}") %>
     <% end %>
+>>>>>>> f6111189a15c4ff6f98914b813f50e41cde5bfa9
 		<%= yield %>
 		<%= render 'layouts/footer' %> 
 		<%= debug (params) if Rails.env.development? %> 
