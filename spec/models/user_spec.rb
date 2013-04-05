@@ -30,9 +30,11 @@ describe User do
   it { should respond_to(:admin) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:microposts) } 
+  it { should respond_to(:feed) }
 
   it { should be_valid }
   it { should_not be_admin }
+
 
   describe "with admin attribute set to 'true'" do
     before do
@@ -145,14 +147,31 @@ describe User do
     end 
   end 
 
-  it "should destroy associated microposts" do 
+  it "should destroy associated microposts" do
     microposts = @user.microposts.dup
-    @user.destroy 
-    microposts.should_not be_empty            #fucker just wants to keep failing
+    @user.destroy
+    microposts.should_not be_empty
     microposts.each do |micropost|
       Micropost.find_by_id(micropost.id).should be_nil
     end
   end
+
+  describe "microposts associations" do 
+
+    before { @user.save }
+    let!(:older_micropost) do
+      FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
+    end 
+
+    describe "status" do
+      let(:unfollowed_post) do 
+      end
+
+      its(:feed) { should include(newer_micropost) }
+      its(:feed) { should include(older_micropost) }
+      its(:feed) { should_not include(unfollowed_post) }
+    end
+  end 
 end
 
 
