@@ -74,9 +74,9 @@ describe "Authentication" do
       end
 
       describe "in the Users controller" do
-      #   before { put user_path(user) }
-      #  it { should have_selector('title', text: 'Sign in') }
-      # end 
+        # before { put user_path(user) }
+        # it { should have_selector('title', text: 'Sign in') }
+       #  end
 
         describe "visiting the edit page" do
           before { visit edit_user_path(user) }
@@ -90,6 +90,16 @@ describe "Authentication" do
 
         describe "visiting the user index" do
           before { visit users_path }
+          it { should have_selector('title', text: 'Sign in') }
+        end
+
+        describe "visiting the following page" do  
+          before {visit following_user_path(user) }
+          it { should have_selector('title', text: 'Sign in') }
+        end
+
+        describe "visiting the followers page" do 
+          before { visit followers_user_path(user) }
           it { should have_selector('title', text: 'Sign in') }
         end
       end
