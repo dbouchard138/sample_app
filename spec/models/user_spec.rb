@@ -154,31 +154,31 @@ describe User do
     it "should have the right microposts in the right order" do 
       @user.microposts.should == [newer_micropost, older_micropost]
     end 
-  end 
 
-  it "should destroy associated microposts" do
-    microposts = @user.microposts.dup
-    @user.destroy
-    # microposts.should_not be_empty                            #failing here (section 10.15, fix on 10.16 not working)
-    microposts.each do |micropost|
-      Micropost.find_by_id(micropost.id).should be_nil
-    end
-  end
-
-  describe "microposts associations" do 
-
-    before { @user.save }
-    let!(:older_micropost) do
-      FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
-    end 
-
-    describe "status" do
-      let(:unfollowed_post) do 
+    it "should destroy associated microposts" do
+      microposts = @user.microposts.dup
+      @user.destroy
+      microposts.should_not be_empty                           
+      microposts.each do |micropost|
+        Micropost.find_by_id(micropost.id).should be_nil
       end
+    end
 
-      # its(:feed) { should include(newer_micropost) }          #failing here (section 10.38)
-      its(:feed) { should include(older_micropost) }
-      its(:feed) { should_not include(unfollowed_post) }
+    describe "microposts associations" do 
+
+      before { @user.save }
+      let!(:older_micropost) do
+        FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
+      end 
+
+      describe "status" do
+        let(:unfollowed_post) do 
+        end
+
+        its(:feed) { should include(newer_micropost) }          
+        its(:feed) { should include(older_micropost) }
+        its(:feed) { should_not include(unfollowed_post) }
+      end
     end
   end 
 
