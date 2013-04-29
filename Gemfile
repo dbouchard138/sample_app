@@ -11,7 +11,7 @@ gem 'jquery-rails', '2.0.2'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
-  gem 'rspec-rails', '2.11.0'
+  gem 'rspec-rails'
   gem 'guard-rspec', '1.2.1'
   gem 'guard-spork', '1.4.2'  
   gem 'spork', '0.9.2'
@@ -38,6 +38,7 @@ group :test do
   gem 'rb-fsevent', '0.9.1', :require => false
   gem 'growl', '1.0.3'
   gem 'state_machine'
+  gem 'shoulda-matchers'   # Use with Rspec as opposed to test/unit (shoulda)
  end
 
 group :production do
