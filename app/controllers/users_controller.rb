@@ -66,6 +66,15 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+  def add_friend
+
+  end
+
+  def remove_friend
+
+  end
+
+
   private
 
     # def signed_in_user                                 this is repetative of code in sessions_helper.rb
@@ -83,4 +92,5 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_path) unless current_user.admin?
     end
+
 end
