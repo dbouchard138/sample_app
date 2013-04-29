@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
                                    class_name: "Relationship",
                                    dependent:   :destroy
   has_many :followers, through: :reverse_relationships, source: :follower 
-
+  has_many :user_friendships
+  has_many :friends, through: :user_friendships
 
   
   before_save { |user| user.email = email.downcase }

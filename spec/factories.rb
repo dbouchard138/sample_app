@@ -14,4 +14,6 @@ FactoryGirl.define do
     content "Lorem ipsum"
     user
   end
+
+  factory :friend
 end

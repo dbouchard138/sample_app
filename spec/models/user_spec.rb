@@ -27,6 +27,8 @@ describe User do
   it { should respond_to(:follow!) }
   it { should respond_to(:unfollow!) }
   it { should respond_to(:followers) }
+  it { should have_many(:user_friendships) }
+  it { should have_many(:friends) } 
 
 
 
