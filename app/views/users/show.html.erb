@@ -5,6 +5,7 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        <%= link_to "Add friend", new_user_friendship_path(friend_id: @user) %>
       </h1>
     </section>
     <section>

@@ -13,8 +13,8 @@ Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'rspec/autorun'
-  require File.expand_path("../../custom_matchers", __FILE__) # Dana, Include my custom matchers
-  require File.expand_path("../../controller_macros", __FILE__)
+  # require File.expand_path("../../custom_matchers", __FILE__) # Dana, Include my custom matchers
+  # require File.expand_path("../../controller_macros", __FILE__)
 
 
   # Requires supporting ruby files with custom matchers and macros, etc,
@@ -31,8 +31,8 @@ Spork.prefork do
   # config.mock_with :rr
   config.mock_with :rspec
 
-  config.include(CustomMatchers)  # Dana, Include my custom matchers
-  config.include(ControllerMacros, :type => :controller) # Dana, only can be used in contollers
+  # config.include(CustomMatchers)  # Dana, Include my custom matchers
+  # config.include(ControllerMacros, :type => :controller) # Dana, only can be used in contollers
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

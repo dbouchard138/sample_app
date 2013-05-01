@@ -1,7 +1,7 @@
 module CustomMatchers
-	def be_one_more_than(number)
-		simple_matcher("one more than #{numer}") { |actual| actual == number=1 }
-	end
+	# def be_one_more_than(number)
+	# 	simple_matcher("one more than #{numer}") { |actual| actual == number=1 }
+	# end
 end
 
 

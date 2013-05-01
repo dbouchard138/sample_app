@@ -7,6 +7,7 @@ SampleApp::Application.routes.draw do
   resources :sessions,      only: [:new, :create, :destroy]
   resources :microposts,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :user_friendships
   
   root :to => 'static_pages#home'
 
@@ -17,6 +18,8 @@ SampleApp::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+
+  get '/:id', to: 'profiles#show', as: 'profile'
 
 
 
