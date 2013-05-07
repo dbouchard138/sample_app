@@ -30,4 +30,11 @@ describe UserFriendshipsController, "#new" do
 	# 		get :new
 	# 	end
 	# end
+
+	describe "#create" do 
+		describe  "when not logged in" do 
+			it { should get(:new) }
+			specify { should redirect_to login_path}
+		end 
+	end
 end
