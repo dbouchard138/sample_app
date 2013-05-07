@@ -203,6 +203,12 @@ describe User do
       its(:followers) { should include(@user) }
     end
   end
+
+#   describe "that calling to_param on a user returns the profile_name" do 
+#    let(@user) { FactoryGirl.create(:user) } 
+
+#   specify { @user, users(:name).to_parm }
+#   end
 end
 
 
