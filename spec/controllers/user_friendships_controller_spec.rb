@@ -10,24 +10,24 @@ describe UserFriendshipsController, "#new" do
 		end
 	end
 
-	# context "when logged in" do 
-	# 	before do 
-	# 		let (FactoryGirl.create(:user, login)
-	# 	end
+	context "when logged in" do 
+		before do 
+			let (FactoryGirl.create(:user, login)
+		end
 
-	# 	describe "get new page and make sure succefull"
-	# 		get :new 
-	# 		assert_response :success 
-	# 	end 
+		describe "get new page and make sure succefull"
+			get :new 
+			assert_response :success 
+		end 
 
-	# 	describe "should set a flash error if the friend_id
-	# 	params is missing" do 
-	# 		get :new 
-	# 		assert_equal "Friend required", flash[:error] 
-	# 	end
+		describe "should set a flash error if the friend_id
+		params is missing" do 
+			get :new 
+			assert_equal "Friend required", flash[:error] 
+		end
 
-	# 	describe "display the friend's name" do 
-	# 		get :new
-	# 	end
-	# end
+		describe "display the friend's name" do 
+			get :new
+		end
+	end
 end

@@ -43,9 +43,9 @@ def feed
   Micropost.from_users_followed_by(self)
 end
 
-# def to_param
-#   profile_name 
-# end
+def to_param
+  profile_name 
+end
 
   private
 
