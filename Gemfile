@@ -12,11 +12,11 @@ group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails'
   gem 'guard-rspec', '1.2.1'
-  gem 'guard-spork', '1.4.2'  
+  gem 'guard-spork', '1.4.2'
   gem 'spork', '0.9.2'
 end
 
-group :development do  
+group :development do
   gem 'annotate', '2.5.0'  #Gem Dana added from listing 6.4 rails tutorial
 end
 
