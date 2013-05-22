@@ -26,8 +26,24 @@ describe UserFriendshipsController, "#new" do
 			assert_equal "Friend required", flash[:error] 
 		end
 
+<<<<<<< HEAD
 		describe "display the friend's name" do 
 			get :new
 		end
 	end
+=======
+	# 	describe "display the friend's name" do 
+	# 		get :new
+	# 	end
+	# end
+
+	describe "#create" do 
+		describe  "when not logged in" do 
+			it { should get(:new) }
+			specify { should redirect_to login_path}
+		end 
+	end
+
+	
+>>>>>>> ef2f31387ffb83ec75a2a7244af90df57bdd827d
 end

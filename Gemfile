@@ -8,16 +8,15 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'jquery-rails', '2.0.2'
 
-
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails'
   gem 'guard-rspec', '1.2.1'
-  gem 'guard-spork', '1.4.2'  
+  gem 'guard-spork', '1.4.2'
   gem 'spork', '0.9.2'
 end
 
-group :development do  
+group :development do
   gem 'annotate', '2.5.0'  #Gem Dana added from listing 6.4 rails tutorial
 end
 
