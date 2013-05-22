@@ -1,5 +1,5 @@
 class UserFriendshipsController < ApplicationController
-	# before_filter :authenticate_user!, only: [:new]
+	before_filter :correct_user, only: :new
 
 	
 	def new
@@ -22,4 +22,11 @@ class UserFriendshipsController < ApplicationController
 			redirect_to root_path 
 		end
 	end
+
+	private 
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(new_user_friendship_path) unless current_user?(@user)
+  end
 end

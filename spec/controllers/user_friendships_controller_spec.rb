@@ -37,4 +37,6 @@ describe UserFriendshipsController, "#new" do
 			specify { should redirect_to login_path}
 		end 
 	end
+
+	
 end
